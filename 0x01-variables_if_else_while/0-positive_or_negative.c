@@ -4,11 +4,13 @@
 /**
  *main - assigns a random number to int n everytime
  *it executes, and prints it
- *Returns 0 if code is Successful
+ *
+ *Return: 0 if code is Successful
  */
 int main(void)
 {
 	int n;
+
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	if (n > 0)
