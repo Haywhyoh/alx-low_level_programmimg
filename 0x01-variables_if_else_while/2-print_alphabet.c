@@ -1,9 +1,9 @@
 #include <stdio.h>
 /**
- * main - Prints alhabets 
+ * main - Prints alhabets
  * in lower case
  *
- * Returns: 0 if code runs succesfuly
+ * Return: 0 if code runs succesfuly
  */
 int main(void)
 {
