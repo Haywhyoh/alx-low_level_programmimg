@@ -1,6 +1,7 @@
 #include "main.h"
 /**
- * main - check if the char is alpha
+ * _isalpha - check if the char is alpha
+ * @c: c is tested to be between A - Z
  *
  * Return: 1 if alpha
  * 0 otherwise

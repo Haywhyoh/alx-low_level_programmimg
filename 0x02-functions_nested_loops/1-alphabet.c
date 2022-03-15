@@ -1,7 +1,8 @@
 #include "main.h"
 /**
- * main - prints alphabet in
+ * print_alphabet- prints alphabet in
  * lower case
+ * @k is the argument tested
  *
  * Return: 0
  */
