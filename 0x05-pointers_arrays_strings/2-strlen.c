@@ -4,7 +4,7 @@
  * a string
  * @s: the string argument
  *
- * Return: 0 when successful
+ * Return: i the length of the string
  */
 int _strlen(char *s)
 {
@@ -14,6 +14,5 @@ int _strlen(char *s)
 	{
 		j++;
 	}
-	_putchar(j);
-	return(0);
+	return(i);
 }
