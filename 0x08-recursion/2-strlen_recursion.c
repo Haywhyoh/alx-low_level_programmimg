@@ -1,0 +1,17 @@
+#include "main.h"
+/**
+ * strlen_recursion - return the length
+ * of a string
+ * @s: the string that it's length is returned
+ *
+ * Return: len the strng length
+ */
+int strlen_recursion(char *s)
+{
+
+	if (*s != '\0')
+	{
+		return (0);
+	}
+	return (strlen_recursion(s + 1) + 1);
+}
