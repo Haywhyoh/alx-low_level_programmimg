@@ -2,7 +2,7 @@
 /**
  * factorial - calculates the factorial of n
  * @n: number to calculate its factorial
- * 
+ *
  * Return: 0 for succesful and -1 for error
  */
 int factorial(int n)
