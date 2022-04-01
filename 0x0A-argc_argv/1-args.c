@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
 /**
  * main - prints the number of argument
  * @argc: argument count
@@ -9,7 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	printf("%i\n", argc - 1);
+	printf("%d\n", argc - 1);
 
 	return (0);
 }
