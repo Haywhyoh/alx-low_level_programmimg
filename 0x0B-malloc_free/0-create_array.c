@@ -14,7 +14,7 @@ char create_array(unsigned int size, char c)
 
 	if (size == 0)
 	{
-		retunrn NULL;
+		return NULL;
 	}
 
 	char *n = (char *) malloc(size * sizeof(char));
@@ -24,7 +24,7 @@ char create_array(unsigned int size, char c)
 		return (0);
 	}
 
-	for (i = 0; for i < size; i++)
+	for (i = 0; i < size; i++)
 	{
 		*(n + i) = c;
 	}
