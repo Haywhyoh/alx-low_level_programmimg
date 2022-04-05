@@ -8,16 +8,17 @@
  *
  * Return: Null if size is 0 or when code fails
  */
-char create_array(unsigned int size, char c)
+char *create_array(unsigned int size, char c)
 {
 	int i;
+	char *n;
 
 	if (size == 0)
 	{
-		return NULL;
+		return (NULL);
 	}
 
-	char *n = (char *) malloc(size * sizeof(char));
+	n = (char *) malloc(size * sizeof(char));
 
 	if (n == NULL)
 	{
