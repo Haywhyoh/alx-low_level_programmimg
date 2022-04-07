@@ -15,12 +15,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (s1 == NULL)
 	{
-		return (" ");
+		return ("");
 	}
 
 	if (s2 == NULL)
 	{
-		return (" ");
+		return ("");
 	}
 
 	while (s1[i] != '\0')
