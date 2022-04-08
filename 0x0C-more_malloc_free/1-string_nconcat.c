@@ -36,20 +36,20 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 	}
 
-	int k = 0;
+	int i = 0;
 
-	while (s1[k] != '\0')
+	while (s1[i] != '\0')
 	{
-		concat[k] = s1[k];
-		k++;
+		concat[i] = s1[i];
+		i++;
 	}
 
 	while (j < n && s2[j] != '\0')
 	{
-		concat[k] = s2[j];
-		k++;
+		concat[i] = s2[j];
+		j++;
 		i++;
 	}
-	concat[k] = '\0';
+	concat[i] = '\0';
 	return (concat);
 }
