@@ -1,55 +1,39 @@
-#include <stdlib.h>
 #include "main.h"
+#include <stdlib.h>
 /**
- * *string_nconcat - concat n bytes of two strings
- * @s1: the first string
- * @s2: the second string
- * @n: the numberof bytes of s2 to be concatenated
- *
- * Return: the poiner to the concatenated string
- */
+ * *string_nconcat - concatenates two strings
+ * @s1: first string
+ * @s2: second string
+ * @n: limit of s2
+ * Return: pointer to new space in memory or null
+ **/
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *concat;
+	char *strDup;
 	int i;
-	unsigned int j = 0;
+	unsigned int j;
 
 	if (s1 == NULL)
-	{
-		return ("");
-	}
-
+		s1 = "";
 	if (s2 == NULL)
-	{
-		return ("");
-	}
-
+		s2 = "";
+	i = 0;
 	while (s1[i] != '\0')
-	{
 		i++;
-	}
-
-	concat = malloc(sizeof(char) * (n + i + 1));
-
-	if (concat == NULL)
-	{
+	strDup = malloc(sizeof(char) * (i + n + 1));
+	if (strDup == NULL)
 		return (NULL);
-	}
-
-	int i = 0;
-
+	i = j = 0;
 	while (s1[i] != '\0')
 	{
-		concat[i] = s1[i];
+		strDup[i] = s1[i];
 		i++;
 	}
-
 	while (j < n && s2[j] != '\0')
 	{
-		concat[i] = s2[j];
-		j++;
-		i++;
+		strDup[i] = s2[j];
+		i++, j++;
 	}
-	concat[i] = '\0';
-	return (concat);
+	strDup[i] = '\0';
+	return (strDup);
 }
