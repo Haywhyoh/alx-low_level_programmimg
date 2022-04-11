@@ -1,12 +1,12 @@
 #include <stdio.h>
 /**
- * main - print the name of the 
+ * main - print the name of the
  * compilation file
  *
  * Return: 0 for success
  */
-int main()
+int main(void)
 {
-	printf("%s\n",__FILE__);
+	printf ("%s\n", __FILE_);
 	return (0);
 }
