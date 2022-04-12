@@ -1,20 +1,20 @@
-#ifndef DOG_H
-#define DOG_H
+#include <stdio.h>
+#include <stdlib.h>
+#include "dog.h"
+
 /**
- * struct dog - my struct called dog
- * @name: first member
- * @age: second member
- * @owner: third member
+ * print_dog - prints a struct dog
+ * @d: struct dog to print
  */
-struct dog
+void print_dog(struct dog *d)
 {
-	char *name;
-	float age;
-	char *owner;
-};
+	if (d == NULL)
+		return;
 
-void init_dog(struct dog *d, char *name, float age, char *owner);
-void print_dog (struct dog *d);
-dog_t *new_dog(char *name, float age, char *owner);
+	if (d->name == NULL)
+		d->name = "(nil)";
+	if (d->owner == NULL)
+		d->owner = "(nil)";
 
-#endif
+	printf("Name: %s\nAge: %f\nOwner: %s\n", d->name, d->age, d->owner);
+}
