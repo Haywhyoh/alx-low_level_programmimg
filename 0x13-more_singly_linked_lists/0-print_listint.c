@@ -2,9 +2,9 @@
 
 /**
  * print_listint - print all the element of listint_t
- * @listint_t: the single linked list to be printed
+ * @h: the single linked list to be printed
  *
- * Return - the number of node
+ * Return: the number of node
  */
 size_t print_listint(const listint_t *h)
 {
