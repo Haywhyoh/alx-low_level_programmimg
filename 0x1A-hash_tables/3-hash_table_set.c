@@ -1,53 +1,64 @@
 #include "hash_tables.h"
 /**
- * hash_table_set - function that adds an element to the hash table.
- * @ht: the hash table
- * @key: the data key
- * @value: the data value
- * 
- * Return: 1 if code is successful and 0 if not
+ * add_n_hash - adds a node at the beginning of a hash at a given index
+ *
+ * @head: head of the hash linked list
+ * @key: key of the hash
+ * @value: value to store
+ * Return: head of the hash
+ */
+hash_node_t *add_n_hash(hash_node_t **head, const char *key, const char *value)
+{
+	hash_node_t *tmp;
+
+	tmp = *head;
+
+	while (tmp != NULL)
+	{
+		if (strcmp(key, tmp->key) == 0)
+		{
+			free(tmp->value);
+			tmp->value = strdup(value);
+			return (*head);
+		}
+		tmp = tmp->next;
+	}
+
+	tmp = malloc(sizeof(hash_node_t));
+
+	if (tmp == NULL)
+		return (NULL);
+
+	tmp->key = strdup(key);
+	tmp->value = strdup(value);
+	tmp->next = *head;
+	*head = tmp;
+
+	return (*head);
+}
+
+/**
+ * hash_table_set - adds a hash (key, value) to a given hash table
+ *
+ * @ht: pointer to the hash table
+ * @key: key of the hash
+ * @value: value to store
+ * Return: 1 if successes, 0 if fails
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int index;
-	hash_node_t *new;
-	hash_node_t *temp;
-	
-	index = key_index((const unsigned char *) key, ht->size);
-	new = malloc(sizeof(hash_node_t));
-	temp = ht->array[index];
+	unsigned long int k_index;
 
-	if (ht == NULL || strlen(key) == 0)
+	if (ht == NULL)
 		return (0);
 
-	if (!new)
-	{
-        	return (0);
-	}
+	if (key == NULL || *key == '\0')
+		return (0);
 
-	if (!(ht->array[index]))
-	{
-        	new->value = strdup(value);
-        	new->key = strdup(key);
-        	new->next = NULL;
-        	ht->array[index] = new;
-    	}
+	k_index = key_index((unsigned char *)key, ht->size);
 
-    	while (temp)
-    	{
-        	if (strcmp(temp->key, key) == 0)
-        	{
-            	free (temp->value);
-            	temp->value = strdup(value);
-            	return (1);
-        }
+	if (add_n_hash(&(ht->array[k_index]), key, value) == NULL)
+		return (0);
 
-        temp = temp->next;
-	}
-
-    	new->value = strdup(value);
-    	new->key = strdup(key);
-    	new->next = ht->array[index];
-    	ht->array[index] = new;
-    	return (1);
+	return (1);
 }
