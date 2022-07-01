@@ -6,13 +6,6 @@
  *
  * Return: value associated with element or NULL if key not found
  */
-#include "hash_tables.h"
-/**
- * hash_table_get - get value from key
- * @ht: hashtable
- * @key: key to find value for
- * Return: value
- */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned int index;
