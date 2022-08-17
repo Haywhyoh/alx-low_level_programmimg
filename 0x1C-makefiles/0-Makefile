@@ -1,0 +1,3 @@
+# -*- Makefile -*-
+all:
+	gcc -Wall school.c main.c  -o school 
