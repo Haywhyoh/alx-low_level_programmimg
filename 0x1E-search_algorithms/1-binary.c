@@ -39,7 +39,7 @@ void print_array(int *array, size_t high, size_t low)
 	{
 		printf("%u", array[low]);
 		if (low != high)
-			printf(", ")
+			printf(", ");
 		low++;
 	}
 	printf("\n");
